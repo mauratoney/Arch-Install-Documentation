@@ -1,3 +1,7 @@
+layout: page
+title: "Arch-Install-Documentation"
+permalink: /ToneyArchDoc
+
 To start, download an Arch ISO and the respective PGP signature. On Windows, to verify the signature download Gpg4win and then use the command gpg --auto-key-locate clear,wkd -v --locate-external-key pierre@archlinux.org. This is just one option for an external key. With that done, the signature can be verified with the command gpg --verify <signature file name> <iso file name>. If the command indicates the two match, the iso should be safe to use. 
 
 To actually install Arch, start by creating a new virtual machine. Provide the Arch ISO file and choose 'Other Linux 6.x kernel 64-bit' for the operating system as there is no specific listing for Arch and this is the general category the current Arch operating system falls under. The virtual machine was given one processor with 4 cores, eight gigabytes of RAM, and 24 gigabytes of storage. Upon creating the new virtual machine I realized Microsoft had stored the virtual machine in my OneDrive and so I deleted and recreated the virtual machine in a new location. 
