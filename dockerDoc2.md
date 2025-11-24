@@ -45,10 +45,14 @@ Then, the container can be created with: sudo docker compose -f /opt/wg-ui/docke
 Then, to configure routing, the "Post Up Script" field should be populated with: iptables -A FORWARD -i %1 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth+ -j MASQUERADE. The second "Post Down Script" should be populated with: iptables -D FORWARD -i %1 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth+ -j MASQUERADE. Save the configuration then click "Apply Config". 
 Next, navigate to the WireGuard Clients tab and create a new client with the name "myPhone". Download the WireGuard app from the app store on an iOS device. Then, from the WireGuard clients tab, locate the "myPhone" client and click on the QR code option. Scan this QR code with the WireGuard app on the iOS device and turn on the VPN. Using "ip.hetzner.com" shows the before and after for the ip address of this iOS device:
 Before:
+![image of phone's ip before](iOSbefore.JPG "iOS before picture")
 
 After:
+![image of phone's ip after](iOSafter.JPG "iOS after picture")
 
 To connect a Windows device, start by creating a new client as before, this time naming it "puter". Once it is created, from this same tab, select the Download option for the computer client, which will download the configuration file. If the option to "Apply Config" exists in the upper right, select it. Install the WireGuard desktop client for Windows and open it. Import the configuration file that was just downloaded. Right click on the "puter" listing in the bank on the left and select "Edit Selected Tunnel". If "Block untunneled traffic" is checked, uncheck it. Now the latest handshake should indicate that the connection is successful. Once again use "ip.hetzner.com" to show the before and after for the ip address of the Windows device:
 Before:
+![image of computer's ip before](windowsBefore.png "Windows before picture")
 
 After:
+![image of computer's ip after](windowsAfter.png "Windows after picture")
